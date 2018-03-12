@@ -6,7 +6,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Eugene Martens Portfolio">
-	<meta name="keywords" content="Eugene Martens, Portfolio, software development, web desighn, game development, programming">
+	<meta name="keywords" content="Eugene Martens,Portfolio,software,art,illustration,software development,
+	 web design,games,software,design, game development, programming, game, game design, junior, ">
 	<meta name="author" content="Eugene Martens">
 	<link rel="shortcut icon" type="image/png" href="img/Icons/favicon.ico">
 
@@ -16,7 +17,6 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="css/custom.css" media="screen,projection" />
-	<link type="text/css" rel="stylesheet" href="css/project-content.css" media="screen,projection" />
 	<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -41,7 +41,6 @@
 
 	<script>
 		$(document).ready(function () {
-			setSize();
 			$('.modal').modal();
 
 			$('#contact').modal({
@@ -49,41 +48,23 @@
 			});
 			$(".button-collapse").sideNav();
 			$('.carousel.carousel-slider').carousel({ fullWidth: true });
-			$('.scrollspy').scrollSpy({ scrollOffset: 0 });
+			$('.scrollspy').scrollSpy({ scrollOffset: 60 });
 			$('select').material_select();
 
 			$("#navvy").hide(); //hide your div initially
 			var topOfOthDiv = $("#Projects").offset().top;
 			$(window).scroll(function () {
-				if ($(window).scrollTop() > topOfOthDiv - 15) { //scrolled past the other div?
-					$("#navvy").fadeIn("slow"); //reached the desipeach point -- show div
+				if ($(window).scrollTop() > topOfOthDiv - 235) { //scrolled past the other div?
+					$("#navvy").fadeIn(1200); //reached the desipeach point -- show div
 				}
 				else {
-					$("#navvy").fadeOut("slow");
+					$("#navvy").fadeOut(1200);
 				}
 			});
 
 		});
 	</script>
 
-	<script>
-		function Pause() {
-			console.log("poo");
-			var carousel = $('#4').carousel();
-			carousel.off();
-		}
-
-		function Init() {
-			document.onclick = function () {
-				$('#1').carousel({ fullWidth: true });
-				$('#4').carousel({ fullWidth: true });
-				$('.carousel.carousel-slider').carousel({ fullWidth: true });
-			}
-		}
-	</script>
-
-	<!-- Main -->
-	<!-- Three JS -->
 </head>
 
 <body>
@@ -96,21 +77,12 @@
 	<!------------------------------MAIN------------------------------>
 	<main>
 		<!-- Three JS -->
-		<script type="text/javascript" src="js/THREE/three.js"></script>
-		<script type="text/javascript" src="js/THREE/EffectComposer.js"></script>
-		<script type="text/javascript" src="js/THREE/RenderPass.js"></script>
-		<script type="text/javascript" src="js/THREE/CopyShader.js"></script>
-		<script type="text/javascript" src="js/THREE/ShaderPass.js"></script>
-
-		<script type="text/javascript" src="js/Helpers/MathUtils.js"></script>
-
-		<script type="text/javascript" src="js/Shaders/MetaBalls.shader"></script>
-
-
+		<script type="text/javascript" src="js/THREE/three.min.js"></script>
+		<!-- Three JS -->
 
 		<nav id="navvy" class="fixed display-flex">
 			<div class="nav-wrapper t-a-e">
-				<a href="#" data-activates="mobile-demo" class="button-collapse">
+				<a data-activates="mobile-demo" class="button-collapse">
 					<i class="material-icons">menu</i>
 				</a>
 				<a id="right" target="_blank" href="https://twitter.com/jhonnywhiplash" class="m-sides-5 waves-effect waves-light btn-floating social twitter social-twit-col z-depth-1">
@@ -119,6 +91,8 @@
 					<i class="fa fa-github l-height-40"></i> Sign in with github</a>
 				<a id="right" target="_blank" href="https://www.linkedin.com/in/eugene-martens-7b9603a0/" class="m-sides-5 waves-effect waves-light btn-floating social linkedin social-linked-col z-depth-1">
 					<i class="fa fa-linkedin l-height-40"></i> Sign in with linkedin</a>
+				<a id="right" target="_blank" href="#Contact" class="m-sides-5 waves-effect waves-light btn-floating social linkedin social-linked-col z-depth-1">
+					<i class="material-icons l-height-40">email</i></a>
 				<ul class="right hide-on-med-and-down">
 					<li>
 						<a href="#Projects">Projects</a>
@@ -130,16 +104,11 @@
 						<a href="#About">About</a>
 					</li>
 					<li>
-						<a href="#Contact">Contact</a>
-
-					</li>
-					<li>
 						<a href="http://webgl.eugenemartens.com/">WebGl</a>
-
 					</li>
 
 				</ul>
-				<ul class="side-nav" id="mobile-demo">
+				<ul class="side-nav gold" id="mobile-demo">
 					<li>
 						<a href="#Projects">Projects</a>
 					</li>
@@ -150,50 +119,54 @@
 						<a href="#About">About</a>
 					</li>
 					<li>
-						<a href="#Contact">Contact</a>
-					</li>
-					<li>
 						<a href="http://webgl.eugenemartens.com/">WebGl</a>
-
 					</li>
 				</ul>
 			</div>
 		</nav>
 
 		<!------------------------------MODAL CONTENT------------------------------>
+
 		<div class="row no-b-margin">
 
 			<!-- Modal Structure -->
 
-			<div id="m-art-beach" class="modal b-r-10 no-color m-t-20">
+			<div id="m-art-beach" class="modal  no-color">
 				<div class="modal-content">
 					<img src="./img/beach_cg.jpg" alt="" class="img-clamp-100">
 				</div>
 			</div>
 
+			<div id="m-art-avo" class="modal  no-color">
+				<div class="modal-content">
+					<img src="./img/Art_09.png" alt="" class="img-clamp-100">
+				</div>
+			</div>
+
+
 			<!-- Modal Structure -->
-			<div id="m-art-1" class="modal b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-1" class="modal  no-color padding-10">
 				<div class="modal-content">
 					<img src="./img/Art_01.JPG" alt="" class="img-clamp-100">
 				</div>
 			</div>
 
 			<!-- Modal Structure -->
-			<div id="m-art-9" class="modal b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-9" class="modal  no-color padding-10">
 				<div class="modal-content">
 					<img src="./img/Art_09.png" alt="" class="img-clamp-100">
 				</div>
 			</div>
 
 			<!-- Modal Structure -->
-			<div id="m-art-2" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-2" class="modal v-modal-width  no-color padding-10">
 				<div class="modal-content">
 					<img src="./img/Art_02.JPG" alt="" class="img-clamp-100">
 				</div>
 			</div>
 
 			<!-- Modal Structure -->
-			<div id="m-art-3" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-3" class="modal v-modal-width  no-color padding-10">
 
 				<div class="modal-content">
 					<img src="./img/Art_03.JPG" alt="" class="img-clamp-100">
@@ -201,1015 +174,442 @@
 
 			</div>
 
-			<div id="m-art-3" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-4" class="modal  no-color padding-10">
 
 				<div class="modal-content">
-					<img src="./img/Art_03.JPG" alt="" class="img-clamp-100">
+					<img src="./img/Art_04.JPG" alt="" class="img-clamp-100">
 				</div>
 
 			</div>
 
-			<div id="m-art-8" class="modal v-modal-width-2 b-r-10 no-color padding-10 m-t-20">
+			<div id="m-art-8" class="modal v-modal-width-2  no-color padding-10">
 
 				<div class="modal-content">
 					<img src="./img/Art_08.jpg" alt="" class="img-clamp-100">
 				</div>
 
 			</div>
+		</div>
 
-			<!------------------------------------------------------------------------>
+		<!------------------------------MODAL CONTENT------------------------------>
+		<div id="webGL-container"></div>
 
-			<!-- Modal Structure -->
-			<div id="m-p-art-0" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
+		<div class="width-clamp-100 row no-b-margin">
+			<!-- ----------------------------SPLASH------------------------- -->
 
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art0.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
+			<div class="responsive-img pos-rel col s12 blue h-100 Splash-Back  l2 exclude-h width-clamp-100">
+				<div class=" centre position-b">
+					<div class="container centre position-b"></div>
 
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-p-art-1" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/pixel_Gene_Dance/Puri_Puri_Jump.gif" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-p-art-2" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art2.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-p-art-3" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/pixel_Gene_Dance/Jest_Dance.gif" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-p-art-4" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art4.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-p-art-5" class="modal v-modal-width-2 b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art5.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-p-art-6" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art6.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-p-art-7" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/Pixel_Art7.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-p-art-8" class="modal v-modal-width b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/2d/pixel_Gene_Dance/Pixel_Gene.gif" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!------------------------------------------------------------------------>
-			<!------------------------------------------------------------------------>
-
-			<!-- Modal Structure -->
-			<div id="m-m-art-0" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-0.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-m-art-1" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-1.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-m-art-2" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-2.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<!-- Modal Structure -->
-			<div id="m-m-art-3" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-3.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-m-art-4" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-4.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-m-art-5" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-5.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-			<div id="m-m-art-6" class="modal b-r-10 no-color padding-10 m-t-20">
-
-				<div class="modal-content">
-					<img src="./img/Models/m-art-6.png" alt="" class="img-pixelated img-clamp-100">
-				</div>
-
-			</div>
-
-
-			<!------------------------------------------------------------------------>
-			<!------------------------------------------------------------------------>
-
-			<div id="contact" class="modal max-w-550 b-r-10 no-color padding-10">
-
-				<div class="modal-content padding-0">
-					<div class=" container  w-90 centre">
-						<div class="container abs t-r-0 width-clamp-auto">
-							<i class="trans-5-10 material-icons left modal-close close-transform">clear</i>
-						</div>
-
-						<form action="https://formspree.io/eugene@lithstudios.com" method="POST">
-							<div class=" container p-m-10 centre form-border white  w-100 z-depth-3 f-c-black">
-								<div class="container w-90">
-
-									<div class="input-field col s12 m-r-0">
-										<select type="hidden" name="_subject" value="New submission!">
-											<option value="No Topic" disabled selected>Topic</option>
-											<option value="Design and Development">Design and Development</option>
-											<option value="Visual Art">Visual Art</option>
-											<option value="Miscellaneous">Miscellaneous</option>
-										</select>
-										<label>Area Of Interest</label>
-									</div>
-
-									<div class="row m-r-0">
-										<div class="row m-r-0">
-											<div class="input-field col s12 m-r-0">
-												<i class="material-icons prefix">account_circle</i>
-												<input id="icon_prefix" required type="text" name="Name" class="validate">
-												<label for="icon_prefix">Name</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="row m-r-0">
-										<div class="row m-r-0">
-											<div class="input-field col s12 m-r-0">
-												<i class="material-icons prefix">email</i>
-												<input id="email" required type="email" name="Email" class="validate border-b">
-												<label for="email" data-error="wrong" data-success="right">Email</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="row m-r-0">
-										<div class="row m-b-10 m-r-0">
-											<div class="input-field col s12 m-r-0">
-												<i class="material-icons prefix">mode_edit</i>
-												<textarea id="icon_prefix2" class="materialize-textarea" name="Message"></textarea>
-												<label for="icon_prefix2">Message</label>
-											</div>
-										</div>
-									</div>
-									<!-- onclick="Materialize.toast('Sent!', 5000)" -->
-
-									<button class="showMore waves-effect waves-light btn blue" type="submit" value="Send">
-										<i class="material-icons left">email</i>Send</button>
-
-								</div>
-							</div>
-
-						</form>
+					<h2 class="t-align-c f-c-white splash-argo-f">EUGENE MARTENS</h2>
+					<h4 class="t-align-c f-c-white">|Creative| • |Engineering|</h4>
+					<br>
+					<br>
+					<a class="waves-effect waves-light btn blue" href="#Projects">
+								Projects
+							</a>
+					<a class="waves-effect waves-light btn blue" href="#Services">
+								Services
+							</a>
+					<a class="waves-effect waves-light btn blue" href="#Contact">
+								Contact
+							</a>
+					<a class="waves-effect waves-light btn blue" href="http://webgl.eugenemartens.com/">
+								WebGl
+							</a>
+					<div class="pos-abs-bottom">
+						<img class="img-splash-unity" src="./img/Unity_Made_By.png">
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<!-- ----------------------------SPLASH------------------------- -->
 
-		<!------------------------------MODAL CONTENT------------------------------>
-		<div id="webGL-container">
-				<script type="text/javascript" src="js/main.js"></script>
-			<div class="width-clamp-100 row no-b-margin">
-				<!-- ----------------------------SPLASH------------------------- -->
+		<!-- ----------------------------PROJECTS------------------------- -->
+		<div class="contain-max m-b-7 row no-b-margin scrollspy" id="Projects">
+			<div class="col s12 h-100 m-b-5">
+				<ul class=" h-banner-35 z-depth-1 margin-b-15 ul-grid tabs tabs-transparent gold waves-light h-banner display-flex">
+					<div class="w-100 row grid-mode gold h-banner-row">
+						<li class=" tab flex-grow-1">
+							<h2 class=" gold m-0-1424rm f-c-black margin-a defualt">projects</h2>
+						</li>
+						<li class="float-r tab flex-grow-1">
+							<a class="waves-effect waves-light f-c-black" href="#1">Games</a>
+						</li>
 
-				<div class="responsive-img pos-rel col s12 blue h-100vh Splash-Back  l2 exclude-h width-clamp-100">
-					<div class=" container centre position-b">
-						<div class="container centre position-b"></div>
-
-						<div class=" Splash-blur-back z-depth-5 t-align-c">
-							<h2 class="t-align-c f-c-gold splash-argo-f">EUGENE MARTENS</h2>
-							<h4 class="t-align-c f-c-gold">Creative - Engineering</h4>
-						</div>
-						<div class="container centre">
-							<a class="waves-effect waves-light btn blue" href="#Projects">
-								Projects
-							</a>
-							<a class="waves-effect waves-light btn blue" href="#Services">
-								Services
-							</a>
-							<a class="waves-effect waves-light btn blue" href="#Contact">
-								Contact
-							</a>
-							<a class="waves-effect waves-light btn blue" href="http://webgl.eugenemartens.com/">
-								WebGl
-							</a>
-						</div>
-
-						<div class="pos-abs-bottom">
-							<img class="img-splash-unity" src="./img/Unity_Made_By.png">
-						</div>
+						<li class="float-r tab flex-grow-1">
+							<a class="waves-effect waves-light  f-c-black" href="#2">Art</a>
+						</li>
+						<li class="float-r tab flex-grow-1">
+							<a class="waves-effect waves-light  f-c-black" href="#3">Software</a>
+						</li>
+						<li class="float-r tab flex-grow-1">
+							<a class="waves-effect waves-light  f-c-black" href="#4">Rendering</a>
+						</li>
 					</div>
-
-				</div>
-
-			</div>
-
-			<!-- ----------------------------SPLASH------------------------- -->
-
-			<!-- ----------------------------PROJECTS------------------------- -->
-			<div class="contain-max m-b-7 row no-b-margin scrollspy" id="Projects">
-				<nav class="nav-extended dark">
-					<div class="z-depth-3 nav-wrapper min-h-5">
-					</div>
-
-					<div class="w-90 float-l row">
-						<ul class=" h-banner-35 z-depth-3 margin-b-15 ul-grid tabs tabs-transparent white h-banner float-l display-flex">
-							<div class="z-depth-2 w-100 row grid-mode gold h-banner-row">
-								<li class=" tab flex-grow-1">
-									<h2 class=" gold neg-b-margin-13 f-c-black margin-a defualt">projects</h2>
-								</li>
-								<li class="float-r tab flex-grow-1">
-									<a class="waves-effect waves-light f-c-black" onclick="Init()" href="#1">Games</a>
-								</li>
-
-								<li class="float-r tab flex-grow-1">
-									<a class="waves-effect waves-light  f-c-black" onclick="Init()" href="#2">Art</a>
-								</li>
-								<li class="float-r tab flex-grow-1">
-									<a class="waves-effect waves-light  f-c-black" onclick="Init()" href="#3">Software</a>
-								</li>
-								<li class="float-r tab flex-grow-1">
-									<a class="waves-effect waves-light  f-c-black" onclick="Init()" href="#4">Rendering</a>
-								</li>
-							</div>
-						</ul>
-					</div>
-				</nav>
-
-				<div id="1" class="no-b-margin height-clamp-85vh carousel carousel-slider center" data-indicators="true">
-					<div class="carousel-fixed-item center">
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#one!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 UG-Back z-depth-3 padding-10">
-									<div class="ultra-gods-Logo "></div>
-									<div class="blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Ultra Gods is a multi player, 2D platformer, fast paced, arcade style, versus game that puts players against each other in
-											a battle for glory. Lead Artist, Animation, Asset-Creation Platform: PC Status: Alpha |Fighter |Brawler|Local
-											Multiplayer|Indie|2D Platformer|
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="https://sweatyyeti.itch.io/ultragods" target="_blank" class="btn ultra-red-theme">For More Ultra</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#two!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 D67-Back z-depth-3 padding-10">
-									<div class="D67-Logo "></div>
-									<div class="D67-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											A scientist is stranded in an alternate reality! surviving on his juicy brain knowledge and find a way back
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="" target="_blank" class="btn ultra-red-theme">Game Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#three!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 max-h-400 LO-Back z-depth-3 padding-10">
-									<div class="LO-Logo "></div>
-									<div class="LO-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Multiplayer online game, players must work together to escape the nightmares of the witching hour
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="" target="_blank" class="btn ultra-red-theme">Game Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-
-					</div>
-
-					<div class="carousel-item no-color white-text" href="#five!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 M-Back z-depth-3 padding-10">
-									<div class="M-Logo "></div>
-									<div class="M-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											A girl finds an old war machine.
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="" target="_blank" class="btn ultra-red-theme">Game Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-
-
-					<div class="carousel-item no-color white-text" href="#seven!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 P-Back z-depth-3 padding-10">
-									<div class="P-Logo "></div>
-									<div class="P-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Play as a crafty goblin and grab all the sweet loots and dosh to fill his stockpile.
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="http://www.ultragods.com/" target="_blank" class="btn ultra-red-theme">For More Ultra</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-
-				</div>
-
-
-
-				<div id="2" class="no-b-margin height-clamp-85vh carousel carousel-slider center" data-indicators="true">
-					<div class="carousel-fixed-item center">
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#one!">
-						<!--
-					<!------------------------------------------      CONTENT ------------------------------------                 -->
-
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="pos-rel max-h-400 min-max-600  white z-depth-3 padding-10">
-									<h5>Traditional and Digital</h5>
-									<div class="gallery">
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-1">
-											<figure>
-												<img src="./img/Art_01.JPG" alt="" class="img-clamp-200">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-beach">
-											<figure>
-												<img src="./img/beach_cg.jpg" alt="" class="img-clamp-200 img-transform">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-9">
-											<figure>
-												<img src="./img/Art_09.png" alt="" class="img-clamp-200">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-2">
-											<figure>
-												<img src="./img/Art_02.JPG" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-3">
-											<figure>
-												<img src="./img/Art_03.JPG" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-8">
-											<figure>
-												<img src="./img/Art_08.jpg" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-					</div>
-					<div class="carousel-item no-color white-text" href="#two!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="pos-rel max-h-400 min-max-600  white z-depth-3 padding-10">
-									<h5>2D</h5>
-									<div class="gallery">
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-0">
-											<figure>
-												<img src="./img/2d/Pixel_Art0.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-1">
-											<figure>
-												<img src="./img/2d/Pixel_Art1.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-2">
-											<figure>
-												<img src="./img/2d/Pixel_Art2.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-3">
-											<figure>
-												<img src="./img/2d/Pixel_Art3.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-4">
-											<figure>
-												<img src="./img/2d/Pixel_Art4.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-5">
-											<figure>
-												<img src="./img/2d/Pixel_Art5.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-6">
-											<figure>
-												<img src="./img/2d/Pixel_Art6.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-7">
-											<figure>
-												<img src="./img/2d/Pixel_Art7.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-p-art-8">
-											<figure>
-												<img src="./img/2d/Pixel_Art8.png" alt="" class="img-pixelated img-clamp-100">
-											</figure>
-										</a>
-
-
-
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-
-
-					<div class="carousel-item no-color white-text" href="#four!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="pos-rel max-h-400 min-max-600  white z-depth-3 padding-10">
-									<h5>Concepts and Illustrations</h5>
-									<div class="gallery">
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-1">
-											<figure>
-												<img src="./img/Art_01.JPG" alt="" class="img-clamp-200">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-beach">
-											<figure>
-												<img src="./img/beach_cg.jpg" alt="" class="img-clamp-200 img-transform">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-9">
-											<figure>
-												<img src="./img/Art_09.png" alt="" class="img-clamp-200">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-2">
-											<figure>
-												<img src="./img/Art_02.JPG" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-3">
-											<figure>
-												<img src="./img/Art_03.JPG" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-art-8">
-											<figure>
-												<img src="./img/Art_08.jpg" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-
-					<div class="carousel-item no-color white-text" href="#five!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 LTR-Back z-depth-3 padding-10">
-									<div class="LTR-Logo "></div>
-									<div class="LTR-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											VR orientated art project.
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="http://www.ultragods.com/" target="_blank" class="btn ultra-red-theme">Project Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-				</div>
-
-
-				<div id="3" class="no-b-margin height-clamp-85vh carousel carousel-slider center" data-indicators="true">
-					<div class="carousel-fixed-item center">
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#one!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 Ang-Back z-depth-3 padding-10">
-									<div class="Ang-Logo "></div>
-									<div class="Ang-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-										Sample Angular Project
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="http://angular.eugenemartens.com" target="_blank" class="btn ultra-red-theme">Demo Site</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#two!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 MVC-Back z-depth-3 padding-10">
-									<div class="MVC-Logo "></div>
-									<div class="MVC-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Sample MVC Project
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="https://github.com/Togene/MVC_5" target="_blank" class="btn ultra-red-theme">Project Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-
-					</div>
-
-				</div>
-
-				<div id="4" class="no-b-margin height-clamp-85vh carousel carousel-slider center" data-indicators="true">
-					<div class="carousel-fixed-item center">
-
-					</div>
-					<div class="carousel-item no-color white-text" href="#one!">
-						<!--
-					<!------------------------------------------      CONTENT ------------------------------------                 -->
-
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="pos-rel max-h-400 min-max-600  white z-depth-3 padding-10">
-									<h5>3D Models</h5>
-									<div class="gallery">
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-0">
-											<figure>
-												<img src="./img/Models/m-art-0.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-1">
-											<figure>
-												<img src="./img/Models/m-art-1.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-2">
-											<figure>
-												<img src="./img/Models/m-art-2.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-3">
-											<figure>
-												<img src="./img/Models/m-art-3.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-4">
-											<figure>
-												<img src="./img/Models/m-art-4.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-5">
-											<figure>
-												<img src="./img/Models/m-art-5.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-										<a class="v-align-a waves-effect waves-light modal-trigger" href="#m-m-art-6">
-											<figure>
-												<img src="./img/Models/m-art-6.png" alt="" class="img-clamp-100">
-											</figure>
-										</a>
-									</div>
-
-									<div class="t-align-c padding-10">
-										<a href="http://webgl.eugenemartens.com/model_demo.html" class="btn ultra-red-theme">Live Demo</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-					</div>
-					<div class="carousel-item no-color white-text" href="#two!">
-
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 max-h-400 Engine-Back z-depth-3 padding-10">
-									<div class="Engine-Logo "></div>
-									<div class="Engine-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Small Scale, home brewed Game Engine, written in Java.
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="https://github.com/Togene/Jave_Game_Engine" target="_blank" class="btn ultra-red-theme">Project Link</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-
-					</div>
-
-
-					<div class="carousel-item no-color white-text" href="#four!">
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-						<div class="width-clamp-95 f-c-black container">
-							<div class="b-r-10 no-color padding-10 m-t-20">
-								<div class="max-h-400 max-h-400 S-Back z-depth-3 padding-10">
-
-									<h3 class="t-align-c f-c-white m-b-150">
-										Shading
-									</h3>
-									<div class="S-blur-back z-depth-5 t-align-c">
-										<div class="defualt container">
-											Collection of Diffrent Shader Effects
-										</div>
-									</div>
-
-									<div class="t-align-c">
-										<a href="http://webgl.eugenemartens.com/shader_demo.html" class="btn ultra-red-theme">Live Demo</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- ----------------------------------------      CONTENT ------------------------------------                 -->
-
-					</div>
-				</div>
-
-
-
-			</div>
-
-
-
-			<!-- ----------------------------PROJECTS------------------------- -->
-
-			<!-- ----------------------------SERVICES------------------------- -->
-			<div class="contain-max neg-margin-top-31 row no-b-margin scrollspy peach-tinge1" id="Services">
-				<nav class="nav-extended dark">
-					<div class="nav-wrapper min-h-5">
-					</div>
-					<div class="nav-content">
-					</div>
-				</nav>
-
-
-				<div class="col s12 h-100vh ">
-					<div class="col s12 h-100vh ">
-
-						<div class="b-r-10 row no-color padding-10 m-t-20">
-							<div class="no-color padding-10">
-								<h2 class="z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt">SERVICES</h2>
-
-								<article class=" f-size-17 defualt t-align-l">
-									<!-- ----------------------------SERVICES------------------------- -->
-									<!-- ----------------------------SERVICES------------------------- -->
-									<h3 class="t-align-c">
-										Visual
-									</h3>
-									<div class="row t-align-c">
-										<div class="col s6">
-											<h5>
-												Illustration and Concepting
-											</h5>
-
-											<p>
-												With a diploma behind my name and unwavering respect for the arts, I take ideas and (with a bit of coffee) convert them into
-												rich, vibrant and compositional sound works for any project.
-											</p>
-
-											<h5>
-												3D Modeling and Rigging
-											</h5>
-
-											<p>
-												Specialising in low poly art with an emphasis on balancing style and substance. No Aspect of a model is left without some
-												form of conscious decision behind it and a solid rigging etiquette makes the animation process that much smoother.
-											</p>
-
-										</div>
-										<div class="col s6">
-											<h5>
-												2D Rendering and Animation
-											</h5>
-
-											<p>
-												With crisp, clean and sharp drawings I can convert obscenely complex objects into easily readable pixelated works, then bring
-												them to life using Aseprite or photoshop.
-											</p>
-
-											<h5>
-												Rendering and Graphics Programming
-											</h5>
-
-											<p>
-												Combining logic and creativity and an in depth understanding of the GPU and its many pipe lines I can bring ideas to computer
-												screen. Shading, advanced rendering, lighting and natural simulations are all a part of the process taken to
-												bring a world to life through HLSL/GLSL.
-											</p>
-										</div>
-									</div>
-
-											<!-- ----------------------------SERVICES------------------------- -->
-									<!-- ----------------------------SERVICES------------------------- -->
-									<h3 class="t-align-c">
-										Design
-									</h3>
-									
-									<!--
-									<div class="container t-align-c">
-										<img class="w-100" src="./img/Development_Process.png">
-									</div>
-									-->
-
-									<div class="row t-align-c">
-										<div class="col s6">
-											<h5>
-												Web Design
-											</h5>
-
-											<p>
-												Personality is the key component to any website, preparing with concepts and mockups, then rendering the site with HTML 5
-												and CSS3, utilizing bootstrap and Materialize as a base, and building upon it with custom features and styles
-												such as WebGL to ensure that what is created is unique, personalized and responsive.
-											</p>
-
-										</div>
-										<div class="col s6">
-
-											<h5>
-												Game Design
-											</h5>
-
-											<p>
-												Emotion, depth and vibrancy are elements, I as a Game Designer focus and enhance upon with my own personal touch, overseeing
-												each step of the development process end to end ensuring that a project meets its requirements and does not lack
-												any qualities that makes it stand out from the rest.
-											</p>
-
-										</div>
-									</div>
-
-									<!-- ----------------------------SERVICES------------------------- -->
-									<!-- ----------------------------SERVICES------------------------- -->
-
-									<!-- ----------------------------SERVICES------------------------- -->
-									<!-- ----------------------------SERVICES------------------------- -->
-									<h3 class="t-align-c">
-										Development
-									</h3>
-									
-									<!--
-									<div class="container t-align-c">
-										<img class="w-100" src="./img/Development_Process.png">
-									</div>
-									-->
-
-									<div class="row t-align-c">
-										<div class="col s12">
-											<h5>
-												ASP.NET MVC 5
-											</h5>
-
-											<p>
-												Front and Back end experience, data management through SQL queries, building forms and features, implementing validation,
-												utilizing RESTful Web API Convention's for Client side Development and ensuring that the application runs smoothly
-												with performance optimization.
-											</p>
-
-											<h5>
-												Angular 4
-											</h5>
-
-											<p>
-												Modular development experience, creating custom components and utilizing CLI deployment, implementing routing and navigations
-												with guarding, retrieving and displaying data, two databinding {(banana in a box)} and data transformation using
-												pipes.
-
-											</p>
-
-											<h5>
-												Game Development
-											</h5>
-
-											<p>
-												Engine development, tools creation, systems development, rendering and CG scripting are amoung many of the more backend jobs
-												I have experience in, developing games from start to finsh, from concept to deployment.
-											</p>
-										</div>
-										<div class="col s12">
-				
-											<label class="showMore waves-effect waves-light btn blue  modal-trigger" href="#contact">
-												<i class="material-icons left">email</i>Contact Me</label>
-
-										</div>
-
-
-
-									</div>
-
-									<!-- ----------------------------SERVICES------------------------- -->
-									<!-- ----------------------------SERVICES------------------------- -->
-
-
+				</ul>
+
+
+				<div id="1" class="m-t-5 m-b-neg-25 h-100 carousel carousel-slider center" data-indicators="true">
+					<div class="band w-85">
+						<div class="item-1 span">
+							<a href="https://sweatyyeti.itch.io/ultragods" class="card">
+								<div class="thumb" style="background-image: url(../img/UltraGods.png);"></div>
+								<article>
+									<h1>UltraGods</h1>
+									<text class=" f-size-15">A fast paced 2-4 local-multiplayer game that will conjure heated competitive play in short winded rounds. Face off
+										in Free For All to come out on top and please the gods! Or team up with an allie in a classic Team Deathmatch mode.
+									</text>
+									<h1>Alpha</h1>
+									<span class="p-5-0">PC</span>
+									<span id="hover"><i class="material-icons">mouse</i>  click for more ultra  </span>
 								</article>
-
-							</div>
-
+							</a>
+						</div>
+						<div class="item-2 med-wide">
+							<a class="card">
+								<div class="thumb" style="background-image: url(../img/Dimension67_Background.png);"></div>
+								<article>
+									<h1>Escape From D-67</h1>
+									<text class=" f-size-15">A RPG, Rogue-like adventure game, Survive the harsh reality of Dimension-67 as Alfonse, a crazy scientist accidently
+										warped to D-67. Nights are filled with terror, and days filled with wonder.
+									</text>
+									<h1>In Development</h1>
+									<span>PC</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-3 expanded">
+							<a class="card">
+								<div class="thumb" style="background-image: url(../img/Pinch_background.png);"></div>
+								<article>
+									<h1>Pinch</h1>
+									<text class=" f-size-15">a stealth game set in the early Victorian era, sneak and skulk your away treasure rooms and dungeons as a foul loot-golbin.
+										Use a multitude of diffrent abilties to trick,trap and stealth your away around guards, but be sure to avoid the
+										light!
+									</text>
+									<h1>Pre Alpha</h1>
+									<span>PC</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-4 expanded">
+							<a class="card">
+								<div class="thumb" style="background-image: url(../img/teneb_orig.png);"></div>
+								<article>
+									<h1>Lights Out</h1>
+									<text class=" f-size-15">Small scale, instance based team game, players join up with friends and help eachother through a nightmarish wourld
+										filled with horrors and stalked by the unsleeping. Take on the role as children trying to battle there fears of
+										the night as they take pillows, night lights and toys with them to fight against the terrors of night.
+									</text>
+									<h1>In Development</h1>
+									<span>Web/PC</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-5 expanded">
+							<a class="card">
+								<div class="thumb" style="background-image: url(../img/mamaro_BackGround.png);"></div>
+								<article>
+									<h1>Mamaro</h1>
+									<text class=" f-size-15"> After the world is brought to its knees by an unknown mechanical force, A girl in the wake finds one of the sentients
+										asleep and accidently actives him. The sentient with new purpose, helps the little girl find whats left, of her
+										people.
+									</text>
+									<h1>In Development</h1>
+									<span>PC</span>
+								</article>
+							</a>
 						</div>
 					</div>
 				</div>
+
+
+
+				<div id="2" class="m-t-5 m-b-neg-25 h-100 carousel carousel-slider center" data-indicators="true">
+
+					<div class="band w-85">
+						<div class="item-1 wide">
+							<a class="card modal-trigger" href="#m-art-4" style="background-image: url(../img/Art_04.JPG);">
+								<div class="thumb"></div>
+							</a>
+						</div>
+
+						<div class="item-5 med">
+							<a class="card modal-trigger" href="#m-art-1" style="background-image: url(../img/Art_01.JPG);">
+								<div class="thumb"></div>
+							</a>
+						</div>
+
+						<div class="item-2 span">
+							<a class="card modal-trigger" href="#m-art-beach" style="background-image: url(../img/beach_cg.jpg);">
+								<div class="thumb"></div>
+							</a>
+						</div>
+
+						<div class="item-4 tall">
+							<a class="card modal-trigger" href="#m-art-2" style="background-image: url(../img/Art_02.JPG);">
+								<div class="thumb tallimg"></div>
+							</a>
+						</div>
+
+						<div class="item-4 tall">
+							<a class="card modal-trigger" href="#m-art-3" style="background-image: url(../img/Art_03.JPG);">
+								<div class="thumb "></div>
+							</a>
+						</div>
+						<div class="item-4 tall">
+							<a class="card modal-trigger" href="#m-art-8" style="background-image: url(../img/Art_08.jpg);">
+								<div class="thumb tallimg"></div>
+							</a>
+						</div>
+
+
+
+						<div class="item-3 med-wide">
+							<a class="card modal-trigger" href="#m-art-avo" style="background-image: url(../img/IMG_0123.JPG);">
+								<div class="thumb "></div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+				<div id="3" class="m-t-5 m-b-neg-25 h-100 carousel carousel-slider center" data-indicators="true">
+					<div class="band w-85">
+						<div class="item-1 med-wide">
+							<a href="http://angular.eugenemartens.com" class="card">
+								<div class="thumb" style="background-image: url(../img/angular2.png);"></div>
+								<article>
+									<h1>Angular 4</h1>
+									<text class=" f-size-15">Small scale client application, written with angular using firebase.</text>
+
+									<span id="hover"><i class="material-icons">mouse</i>  click for Demo</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-2 med-wide">
+							<a href="https://github.com/Togene/MVC_5" class="card">
+								<div class="thumb" style="background-image: url(../img/large.png);"></div>
+								<article>
+									<h1>.NET MVC 5</h1>
+									<text class=" f-size-15">Small scale video rental application, written with .NET framework.</text>
+
+									<span id="hover"><i class="font-size-30 fa fa-github m-0-10"></i>view source</span>
+								</article>
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="4" class="m-t-5 m-b-neg-25  h-100 carousel carousel-slider center" data-indicators="true">
+					<div class="band w-85">
+						<div class="item-2 full">
+							<a href="http://webgl.eugenemartens.com/model_demo.html" class="card">
+								<div class=" p-b-45p thumb" style="background-image: url(../img/Models/All_Models.png);"></div>
+								<article>
+									<h1>3D Models</h1>
+									<text class=" f-size-15">Collection of diffrent 3D-Models, Created in Blender/3DS MAX</text>
+									<span id="hover"><i class="material-icons">mouse</i>  click to view demo</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-2 med-wide">
+							<a href="http://webgl.eugenemartens.com/shader_demo.html" class="card">
+								<div class="thumb" style="background-image: url(../img/ShaderGifDemo.gif);"></div>
+								<article>
+									<h1>Shader Library</h1>
+									<text class=" f-size-15">Collection of diffrent shading techniques</text>
+									<span id="hover"><i class="material-icons">mouse</i>  click to view demo</span>
+								</article>
+							</a>
+						</div>
+						<div class="item-3 med-wide">
+							<a href="https://github.com/Togene/Jave_Game_Engine" class="card">
+								<div class="thumb" style="background-image: url(../img/gamengine.JPG );"></div>
+								<article>
+									<h1>Iota Engine</h1>
+									<text class=" f-size-15">Small game engine written in java, learning more advanced rendering techniques and game engine architecture</text>
+									<span id="hover"><i class="font-size-30 fa fa-github m-0-10"></i>view source</span>
+								</article>
+							</a>
+						</div>
+
+					</div>
+				</div>
 			</div>
-			<!-- ----------------------------SERVICES------------------------- -->
+		</div>
+		<!-- ----------------------------PROJECTS------------------------- -->
 
-			<!-- ----------------------------ABOUT------------------------- -->
-			<div class="contain-max row no-b-margin  scrollspy" id="About">
-				<nav class="z-depth-3 nav-extended dark">
-					<div class="nav-wrapper min-h-5">
+		<!-- ----------------------------SERVICES------------------------- -->
+		<div class="contain-max m-b-neg-15 row scrollspy peach-tinge1" id="Services">
+			<nav class="nav-extended dark">
+				<div class="nav-wrapper min-h-5">
+				</div>
+				<div class="nav-content">
+				</div>
+			</nav>
+
+
+			<div class="col s12 h-100 m-b-neg-15 m-t-5 f-size-17">
+				<div class=" row no-color padding-10 m-t-20">
+					<h2 class="p-5 z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt ">SERVICES</h2>
+					<!-- ----------------------------SERVICES------------------------- -->
+					<!-- ----------------------------SERVICES------------------------- -->
+					<h3 class="m-t-10 black f-c-white font-Upper t-align-l defualt p-5-10 m-b-neg-10 w-90 m-0-auto">
+						<i class="material-icons font-size-40">remove_red_eye</i> Visual
+					</h3>
+					<div class="band">
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c ">
+								<i class="material-icons font-size-30 float-l">brush</i> Illustration and Concepting
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								With a diploma behind my name and unwavering respect for the arts, I take ideas and (with a bit of coffee) convert them into
+								rich, vibrant and compositional sound works for any project.
+							</p>
+						</div>
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">accessibility</i> 3D Modeling and Rigging
+							</h5>
+
+							<p class="t-align-l m-b-t-0 p-5">
+								Specialising in low poly art with an emphasis on balancing style and substance. No Aspect of a model is left without some
+								form of conscious decision behind it and a solid rigging etiquette makes the animation process that much smoother.
+							</p>
+
+						</div>
+
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">burst_mode</i> 2D Rendering and Animation
+							</h5>
+
+							<p class="t-align-l m-b-t-0 p-5">
+								With crisp, clean and sharp drawings I can convert obscenely complex objects into easily readable pixelated works, then bring
+								them to life using Aseprite or photoshop.
+							</p>
+						</div>
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">wb_incandescent</i> Computer Graphics
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Combining logic and creativity and an in depth understanding of the GPU and its many pipe lines I can bring ideas to computer
+								screen. Shading, advanced rendering, lighting and natural simulations are all a part of the process taken to bring
+								a world to life through HLSL/GLSL.
+							</p>
+						</div>
 					</div>
-					<div class="nav-content">
 
+					<!-- ----------------------------SERVICES------------------------- -->
+					<!-- ----------------------------SERVICES------------------------- -->
+					<h3 class="p-5-10 m-t-10 padding-5 black f-c-white font-Upper t-align-l defualt m-b-neg-10 w-90 m-0-auto">
+					<i class="material-icons font-size-40">palette</i>	Design 
+					</h3>
+
+					<!--
+									<div class="container t-align-c">
+										<img class="w-100" src="./img/Development_Process.png">
+									</div>
+									-->
+					<div class="band">
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">devices</i> Web Design
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Personality is the key component to any website, preparing with concepts and mockups, then rendering the site with HTML 5
+								and CSS3, utilizing bootstrap and Materialize as a base, and building upon it with custom features and styles such
+								as WebGL to ensure that what is created is unique, personalized and responsive.
+							</p>
+						</div>
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">directions_run</i> Game Design
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Emotion, depth and vibrancy are elements, I as a Game Designer focus and enhance upon with my own personal touch, overseeing
+								each step of the development process end to end ensuring that a project meets its requirements and does not lack
+								any qualities that makes it stand out from the rest.
+							</p>
+						</div>
 					</div>
-				</nav>
 
+					<!-- ----------------------------SERVICES------------------------- -->
+					<!-- ----------------------------SERVICES------------------------- -->
 
-				<div class="col s12 h-100vh ">
-					<div class="col s12 h-100vh ">
+					<!-- ----------------------------SERVICES------------------------- -->
+					<!-- ----------------------------SERVICES------------------------- -->
+					<h3 class="p-5-10 m-t-10 padding-5 black f-c-white font-Upper t-align-l defualt m-b-neg-10 w-90 m-0-auto">
+						<i class="material-icons font-size-40">widgets</i> Development
+					</h3>
+					<div class="band">
+						<div class="item-1 med-wide white p-5">	
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">view_compact</i> ASP.NET MVC 5
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Front and Back end experience, data management through SQL queries, building forms and features, implementing validation,
+								utilizing RESTful Web API Convention's for Client side Development and ensuring that the application runs smoothly
+								with performance optimization.
+							</p>
+						</div>
+						<div class="item-1 med-wide white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l">swap_horiz</i> Angular 4
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Modular development experience, creating custom components and utilizing CLI deployment, implementing routing and navigations
+								with guarding, retrieving and displaying data, two databinding {(banana in a box)} and data transformation using
+								pipes.
+							</p>
+						</div>
+						<div class="item-1 full white p-5">
+							<h5 class="t-align-c">
+								<i class="material-icons font-size-30 float-l ">nature_people</i> Game Development
+							</h5>
+							<p class="t-align-l m-b-t-0 p-5">
+								Engine development, tools creation, systems development, rendering and CG scripting are amoung many of the more backend jobs
+								I have experience in, developing games from start to finsh, from concept to deployment.
+							</p>
+						</div>
+					</div>
 
-						<div class="b-r-10 row no-color padding-10 m-t-20">
-							<div class="t-align-c no-color padding-10">
-								<h2 class="z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt"> About </h2>
+					<!-- ----------------------------SERVICES------------------------- -->
+					<!-- ----------------------------SERVICES------------------------- -->
 
-								<article class="main defualt">
+				</div>
+			</div>
+		</div>
+		<!-- ----------------------------SERVICES------------------------- -->
 
+		<!-- ----------------------------ABOUT------------------------- -->
+		<div class="m-t-neg-15 contain-max row no-b-margin scrollspy" id="About">
+			<nav class="z-depth-1 nav-extended dark">
+				<div class="nav-wrapper min-h-5">
+				</div>
+				<div class="nav-content">
+
+				</div>
+			</nav>
+			<div class="col s12 h-100 m-b-neg-15">
+				<div class=" row no-color padding-10 m-t-20">
+					<div class="t-align-c no-color padding-10">
+						<h2 class="p-5 z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt"> About </h2>
+
+						<div class="row m-b-5-i">
+							<div class="band">
+								<div class="item-1 tall m-a">
+									<!-- <h3>What We Do</h3> !-->
+									<img src="./img/Eugene01.jpg" class=" size">
+								</div>
+								<div class="item-1 near-full p-5 white f-size-17">
 									<p>
-										My name is Eugene Martens, recently graduated Game Designer and Artist.
+										My name is Eugene Martens, recently graduated Game Developer and Artist.
 									</p>
 									<p>
 										Game Development is my main passion, everything from back end game engine structures to front end aesthetics creation are
@@ -1225,177 +625,151 @@
 									<p>
 										Feel free to explore my website and check out some of my work
 									</p>
-
-								</article>
-
-								<div class="row c">
-									<!-- <h3>What We Do</h3> !-->
-									<img src="./img/Eugene01.jpg" class="z-depth-3 size border-rounded  padding-5 border-rad-20">
-
 								</div>
 
-								<div class="row">
-									<ul>
-										<h5 class="card-title">PROFICIENT KNOWLEDGE</h5>
-										<p class="card-p z-depth-3">C# and Java</p>
-										<p class="card-p z-depth-3">HLSL/GLSL/CG</p>
-										<p class="card-p z-depth-3">JS</p>
-										<p class="card-p z-depth-3">HTML & CSS</p>
-										<p class="card-p z-depth-3">Unity3D</p>
-										<p class="card-p z-depth-3">Visual Studio</p>
-										<p class="card-p z-depth-3">Pixel Art</p>
-										<p class="card-p z-depth-3">3D Modeling</p>
-										<p class="card-p z-depth-3">Blender</p>
-										<p class="card-p z-depth-3">3DS Max</p>
-										<p class="card-p z-depth-3">Rigging</p>
-										<p class="card-p z-depth-3">Website Development</p>
-										<p class="card-p z-depth-3">WebGl/OpenGL</p>
-										<p class="card-p z-depth-3">Advanced Mathematics</p>
-
-										<h5 class="card-title">AVERAGE KNOWLEDGE</h5>
-										<p class="card-p z-depth-3">Characters Concepting</p>
-										<p class="card-p z-depth-3">Git</p>
-										<p class="card-p z-depth-3">C++ and C</p>
-										<p class="card-p z-depth-3">Angular</p>
-										<p class="card-p z-depth-3">ASP.NET</p>
-										<p class="card-p z-depth-3">Front/Back End MVC Development</p>
-										<p class="card-p z-depth-3">3D Animation in Maya/Blender/3DS Max</p>
-										<p class="card-p z-depth-3">Landscape/Level Concept</p>
-										<p class="card-p z-depth-3">Project Management</p>
-										<p class="card-p z-depth-3">Game Mechanics Development</p>
-										<p class="card-p z-depth-3">Illustration & Concepting</p>
-										<p class="card-p z-depth-3">2D Animation in Flash/Photoshop/Aseprite</p>
-
-										<h5 class="card-title">SOME KNOWLEDGE</h5>
-										<p class="card-p z-depth-3">UI Creation and Implementation</p>
-										<p class="card-p z-depth-3">Profiling & Monetisation</p>
-										<p class="card-p z-depth-3">Maya</p>
-										<p class="card-p z-depth-3">SQL</p>
-										<p class="card-p z-depth-3">Logo Design</p>
-									</ul>
-
-								</div>
-
-								<a href="./files/Eugene_Martens_Resume.pdf" download><label class="showMore waves-effect waves-light btn green" href="">
-									<i class="material-icons left" href="">file_download</i>Download Resume</label></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- ----------------------------ABOUT------------------------- -->
-
-			<!-- ----------------------------CONTACT------------------------- -->
-			<div class="contain-max row no-b-margin scrollspy" id="Contact">
-				<nav class="z-depth-3 nav-extended dark">
-					<div class="nav-wrapper min-h-5">
-					</div>
-					<div class="nav-content">
-					</div>
-				</nav>
-
-
-
-				<div class="col s12 h-100vh ">
-					<div class="col s12 h-100vh ">
-
-						<div class="b-r-10 row no-color padding-10 m-t-20">
-							<div class="no-color padding-10 centre">
-								<h2 class="z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt"> Contact </h2>
-
-								<div class="t-align-c f-size-17 f-c-black m-neg-15">
-									<ul class="content-display">
-										<li class="grid padding-t-b-5">
-											<i class="float-l material-icons">place</i>
-											<text class="float-r">Brisbane, Australia</text>
-										</li>
-										<li class="grid padding-t-b-5">
-
-											<i class="material-icons">call</i>
-											<text> 0474 297 982</text>
-
-										</li>
-										<li class="grid padding-t-b-5">
-											<i class="material-icons">
-												email
-											</i>
-											<text>genejmartens@gmail.com</text>
-										</li>
-									</ul>
-
-								</div>
-
-								<form action="https://formspree.io/genejmartens@gmail.com" method="POST">
-									<div class=" container p-m-10 centre  w-70 f-c-black">
-										<div class="container w-90">
-
-											<div class="input-field col s12">
-												<select type="hidden" required name="_subject" value="New submission!">
-													<option value="No Topic" disabled selected>Topic</option>
-													<option value="Design and Development">Design and Development</option>
-													<option value="Visual Art">Visual Art</option>
-													<option value="Miscellaneous">Miscellaneous</option>
-												</select>
-												<label>Area Of Interest</label>
-											</div>
-
-											<div class="row">
-												<div class="row">
-													<div class="input-field col s12">
-														<i class="material-icons prefix">account_circle</i>
-														<input id="icon_prefix" required type="text" name="Name" class="validate">
-														<label for="icon_prefix">Name</label>
-													</div>
-												</div>
-											</div>
-
-											<div class="row">
-												<div class="row">
-													<div class="input-field col s12 ">
-														<i class="material-icons prefix">email</i>
-														<input id="email" type="email" required name="Email" class="validate border-b">
-														<label for="email" data-error="wrong" data-success="right">Email</label>
-													</div>
-												</div>
-											</div>
-
-											<div class="row">
-												<div class="row m-b-10">
-													<div class="input-field col s12">
-														<i class="material-icons prefix">mode_edit</i>
-														<textarea id="icon_prefix2" class="materialize-textarea" name="Message"></textarea>
-														<label for="icon_prefix2">Message</label>
-													</div>
-												</div>
-											</div>
-											<!-- onclick="Materialize.toast('Sent!', 5000)" -->
-
-											<button class="showMore waves-effect waves-light btn blue" type="submit" value="Send">
-												<i class="material-icons left">email</i>Send</button>
-										</div>
-									</div>
-
-								</form>
 							</div>
 
 						</div>
+
+						<div class="row t-align-c f-c-black">
+							<div class="band">
+								<div class="item-1 med white">
+									<h5 class="card-title f-c-black green m-t-0">PROFICIENT</h5>
+									<p class="card-p">C# and Java</p>
+									<p class="card-p">HLSL/GLSL/CG</p>
+									<p class="card-p">JS</p>
+									<p class="card-p">HTML & CSS</p>
+									<p class="card-p">Unity3D</p>
+									<p class="card-p">Visual Studio</p>
+									<p class="card-p">Pixel Art</p>
+									<p class="card-p">3D Modeling</p>
+									<p class="card-p">Blender</p>
+									<p class="card-p">3DS Max</p>
+									<p class="card-p">Rigging</p>
+									<p class="card-p">Website Development</p>
+									<p class="card-p">WebGl/OpenGL</p>
+									<p class="card-p">Advanced Mathematics</p>
+									<p class="card-p">Front End Development</p>
+								</div>
+								<div class="item-1 med white">
+									<h5 class="card-title f-c-black yellow m-t-0">AVERAGE</h5>
+									<p class="card-p">Characters Concepting</p>
+									<p class="card-p">Git</p>
+									<p class="card-p">C++ and C</p>
+									<p class="card-p">Angular</p>
+									<p class="card-p">.NET</p>
+									<p class="card-p">Back End Development</p>
+									<p class="card-p">3D Animation in Maya/Blender/3DS Max</p>
+									<p class="card-p">Landscape/Level Concept</p>
+									<p class="card-p">Project Management</p>
+									<p class="card-p">Game Mechanics Development</p>
+									<p class="card-p">Illustration & Concepting</p>
+									<p class="card-p">2D Animation in Flash/Photoshop/Aseprite</p>
+								</div>
+								<div class="item-1 med white">
+									<h5 class="card-title f-c-black red m-t-0">SOME</h5>
+									<p class="card-p">UI Development</p>
+									<p class="card-p">Profiling & Monetisation</p>
+									<p class="card-p">Maya</p>
+									<p class="card-p">SQL</p>
+									<p class="card-p">Logo Design</p>
+									<p class="card-p">Statistical Data analytics</p>
+								</div>
+							</div>
+							<br>
+						</div>
+
+						<a href="./files/Eugene_Martens_Resume.pdf" download><label class="m-t-neg-5 showMore waves-effect f-c-white waves-light btn blue" >
+									<i class="material-icons left" >file_download</i>Download Resume</label></a>
 					</div>
 				</div>
 
 			</div>
 		</div>
+		<!-- ----------------------------ABOUT------------------------- -->
+
+		<!-- ----------------------------CONTACT------------------------- -->
+		<div class="contain-max row no-b-margin scrollspy" id="Contact">
+			<nav class="z-depth-1 nav-extended dark">
+				<div class="nav-wrapper min-h-5">
+				</div>
+				<div class="nav-content">
+				</div>
+			</nav>
+
+
+
+			<div class="col s12 h-100 m-b-5">
+				<div class=" row no-color padding-10 m-t-20">
+					<div class="no-color padding-10 centre">
+						<h2 class="p-5  z-depth-2 padding-5 gold f-c-black font-Upper t-align-l margin-a defualt"> Contact </h2>
+						<form action="https://formspree.io/genejmartens@gmail.com" method="POST">
+							<div class=" container p-m-10 white f-c-black">
+								<div class="container w-90">
+									<ul class="content-display f-size-17">
+										<li class="grid padding-t-b-5">
+											<i class="material-icons">
+												email
+											</i>
+											<text class="m-a">genejmartens@gmail.com</text>
+										</li>
+									</ul>
+
+									<div class="input-field col s12">
+										<select type="hidden" required name="_subject" value="New submission!">
+													<option value="No Topic" disabled selected>Topic</option>
+													<option value="Design and Development">Design and Development</option>
+													<option value="Visual Art">Visual Art</option>
+													<option value="Miscellaneous">Miscellaneous</option>
+												</select>
+										<label>Area Of Interest</label>
+									</div>
+
+										<div class="row">
+											<div class="input-field col s12">
+												<i class="material-icons prefix">account_circle</i>
+												<input id="icon_prefix" required type="text" name="Name" class="validate">
+												<label for="icon_prefix">Name</label>
+											</div>
+										</div>
+
+
+										<div class="row">
+											<div class="input-field col s12 ">
+												<i class="material-icons prefix">email</i>
+												<input id="email" type="email" required name="Email" class="validate border-b">
+												<label for="email" data-error="wrong" data-success="right">Email</label>
+											</div>
+										</div>
+
+
+										<div class="row m-b-10">
+											<div class="input-field col s12">
+												<i class="material-icons prefix">mode_edit</i>
+												<textarea id="icon_prefix2" class="materialize-textarea" name="Message"></textarea>
+												<label for="icon_prefix2">Message</label>
+											</div>
+										</div>
+									<!-- onclick="Materialize.toast('Sent!', 5000)" -->
+
+								</div>
+								
+							</div>
+
+									<button class="m-t-5 showMore waves-effect waves-light btn blue" type="submit" value="Send">
+												<i class="material-icons left">email</i>Send</button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		</div>
 
 	</main>
 	<!------------------------------MAIN------------------------------>
 	<!------------------------------MAIN------------------------------>
-	<script>
-
-
-			$(document).ready(function () {
-				setSize();
-			});
-	</script>
-
 	<footer class="page-footer gold footer-body padding-10 ">
 		<div class="col s12">
 			<h6 class="t-align-c">LITH Studios, Copyright &copy; 2017</h6>

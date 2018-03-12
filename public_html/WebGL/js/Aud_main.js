@@ -59,7 +59,6 @@ $(function () {
         function updateProgress(oEvent) {
             if (oEvent.lengthComputable) {
                 var percentComplete = oEvent.loaded / oEvent.total;
-                console.log(percentComplete);
             } else {
                 // Unable to compute progress information since the total size is unknown
             }
@@ -224,10 +223,8 @@ $(function () {
 
     function OnWindowResize() {
         resolution = (window.devicePixelRatio == 1) ? 3 : 4;;
-
         windowHalfX = window.innerWidth / 2;
         windowHalfY = window.innerHeight / 2;
-
         var onMobile = false;
 
         if (window.devicePixelRatio == 1) {
@@ -240,8 +237,6 @@ $(function () {
         if (onMobile) {
 
             renderer.setSize(Math.round(window.innerWidth / resolution), Math.round(window.innerHeight / resolution));
-
-
             renderer.domElement.style.width = renderer.domElement.width / 2 * resolution + 'px';
             renderer.domElement.style.height = renderer.domElement.height / 2 * resolution + 'px';
 
@@ -249,11 +244,8 @@ $(function () {
         else {
 
             renderer.setSize(Math.round(window.innerWidth / resolution), Math.round(window.innerHeight / resolution));
-
-
             renderer.domElement.style.width = Math.round(renderer.domElement.width * resolution) + 'px';
             renderer.domElement.style.height = Math.round(renderer.domElement.height * resolution) + 'px';
-
         }
 
         camera.aspect = window.innerWidth / window.innerHeight;

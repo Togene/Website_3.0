@@ -84,15 +84,15 @@ var ringUniform =
         ringLimits: { type: "fv1", value: 0 },
         transparency: { type: "fv1", value: 0 }
     };
-var sundata = 
-{
-    radius: 1.5424, tilt: 0, N1: 125.1228, N2: 0,
-    i1: 10.6, i2: 0, w1: 318.0634, w2: 0.1643573223,
-    a1: 0.5, a2: 0, e1: 0, e2: 0,
-    M1: 115.3654, M2: 13.0649929509, period: 1, moonSize: "",
-    moonObject: "", material: "", selected: false,
-    moonOrbit: 0, orbitSpeedMult: 2, inMoon: false, text: false
-}
+var sundata =
+    {
+        radius: 1.5424, tilt: 0, N1: 125.1228, N2: 0,
+        i1: 10.6, i2: 0, w1: 318.0634, w2: 0.1643573223,
+        a1: 0.5, a2: 0, e1: 0, e2: 0,
+        M1: 115.3654, M2: 13.0649929509, period: 1, moonSize: "",
+        moonObject: "", material: "", selected: false,
+        moonOrbit: 0, orbitSpeedMult: 2, inMoon: false, text: false
+    }
 
 var ShaderLoadList =
     {
@@ -217,10 +217,10 @@ function init() {
     MainRenderPass.renderToScreen = true;
 
     //controls.addEventListener("change", render);
-    var gridHelper = new THREE.GridHelper(1000, 20);
+    //var gridHelper = new THREE.GridHelper(1000, 20);
     //MainScene.add( gridHelper );
 
-    var axisHelper = new THREE.AxisHelper(5);
+    //var axisHelper = new THREE.AxisHelper(5);
     //MainScene.add( axisHelper )
 
     document.addEventListener('mousemove', onMouseMove, false);
@@ -228,24 +228,11 @@ function init() {
     document.addEventListener('mouseup', function (e) { onMouseUp(e); }, false);
     window.addEventListener("resize", onWindowResize, false);
 
-    //var geometry = new THREE.PlaneGeometry( 1225, 1120, 32 );
-    //var material = new THREE.MeshLambertMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
-    //var plane = new THREE.Mesh( geometry, material );
-    //MainScene.add( plane );
-    //plane.receiveShadow = true;
-    //plane.castShadow = true;
-
     controls = new function () {
         this.xPos = vector.x;
         this.yPos = vector.y;
         this.zPos = vector.z;
     }
-    // //
-   // gui = new dat.GUI();
-   //  gui.add(controls, 'xPos', -1000, 1000);
-   //  gui.add(controls, 'yPos', -1000, 1000);
-   //  gui.add(controls, 'zPos', -1000, 1000);
-   //  dat.GUI.toggleHide();
 
     LoadAssets();
     //Load Shaders and Setup Planet
@@ -258,8 +245,6 @@ function init() {
         composer.setSize(window.innerWidth / resolution, window.innerHeight / resolution);
     else
         composer.setSize(window.innerWidth, window.innerHeight);
-
-
 }
 
 function LoadAssets() {
@@ -284,42 +269,35 @@ function LoadAssets() {
     spriteMap04.minFilter = THREE.NearestFilter;
     spriteMap05.magFilter = THREE.NearestFilter;
     spriteMap05.minFilter = THREE.NearestFilter;
-
     //AstPalleteColorGrab = AstoColorPalleteGrab[randomRangeRound(0, AstoColorPalleteGrab.length - 1)].RGB;
 }
 
 function onWindowResize() {
     // notify the renderer of the size change
     // update the camera
-
     resolution = (window.devicePixelRatio == 1) ? 3 : 4;;
     var onMobile = false;
 
-    if (window.devicePixelRatio == 1) {
-        onMobile = false;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        onMobile = true;
     }
     else {
-        onMobile = true;
+        onMobile = false;
     }
 
     if (onMobile) {
         console.log("OnMobile");
+        renderer.setPixelRatio(window.devicePixelRatio);
         composer.setSize(window.innerWidth, window.innerHeight);
-
         renderer.setSize(Math.round(window.innerWidth / resolution), Math.round(window.innerHeight / resolution));
-
-
-        renderer.domElement.style.width = renderer.domElement.width / 2 * resolution + 'px';
-        renderer.domElement.style.height = renderer.domElement.height / 2 * resolution + 'px';
+        renderer.domElement.style.width = Math.round((renderer.domElement.width / 2) * resolution) + 'px';
+        renderer.domElement.style.height = Math.round((renderer.domElement.height / 2) * resolution) + 'px';
     }
     else {
         console.log("OnPc");
-
+        renderer.setPixelRatio(window.devicePixelRatio);
         composer.setSize(window.innerWidth, window.innerHeight);
-
         renderer.setSize(Math.round(window.innerWidth / resolution), Math.round(window.innerHeight / resolution));
-
-
         renderer.domElement.style.width = Math.round(renderer.domElement.width * resolution) + 'px';
         renderer.domElement.style.height = Math.round(renderer.domElement.height * resolution) + 'px';
     }
@@ -330,7 +308,6 @@ function onWindowResize() {
     camera.top = window.innerHeight / 2;
     camera.bottom = window.innerHeight / - 2;
     camera.updateProjectionMatrix();
-
 }
 
 function animate() {
@@ -338,15 +315,13 @@ function animate() {
     timer = timer + delta;
 
     if (timer >= timeLimit) {
-        // if(ShaderLoadList.planet.vertex == undefined)
-        // {
-        //     ShaderLoader('js/Shaders/Planet/Planet.vs.glsl', 
-        //     'js/Shaders/Planet/Planet.fs.glsl', setUpPlanet, false); 
-        // }
-        // else
-        // {
-        //     createPlanet(false, ShaderLoadList.planet.vertex, ShaderLoadList.planet.fragment);
-        // }
+        //  if (ShaderLoadList.planet.vertex == undefined) {
+        //      ShaderLoader('js/Shaders/Planet/Planet.vs.glsl',
+        //          'js/Shaders/Planet/Planet.fs.glsl', setUpPlanet, false);
+        //  }
+        //  else {
+        //      createPlanet(false, ShaderLoadList.planet.vertex, ShaderLoadList.planet.fragment);
+        //  }
 
         timer = 0;
     }
@@ -363,13 +338,10 @@ function animate() {
         if (skyboxuniforms !== undefined)
             skyboxuniforms.time.value = 60. * elapsedSeconds;
         PlanetRotation(planet, planetRotationPeriod, planetTilt, delta);
-
         //planetText.updatePosition(planetSize - 20, - planetText.element.clientWidth / 2, 75);
-
     }
     MoonsUpdate(clock.getDelta());
     requestAnimationFrame(animate);
-
     HandleCursor();
     input();
     render();
@@ -379,57 +351,23 @@ function animate() {
 
 function manageMoonOrbits(orbit) {
 
-        if (showMoonOrbits) {
-            orbit.traverse(function (child) {
-                if (child instanceof THREE.Line) {
-                    child.visible = true;
-                }
-            });
-
-        }
-        else {
-            orbit.traverse(function (child) {
-                if (child instanceof THREE.Line) {
-                    child.visible = false;
-                }
-            });
-        }
+    if (showMoonOrbits) {
+        orbit.traverse(function (child) {
+            if (child instanceof THREE.Line) {
+                child.visible = true;
+            }
+        });
+    }
+    else {
+        orbit.traverse(function (child) {
+            if (child instanceof THREE.Line) {
+                child.visible = false;
+            }
+        });
+    }
 }
-
-
 function updateTargetBox() {
     vector = new THREE.Vector3();
-
-    if (targetPoint.object !== undefined) {
-        var size = targetPoint.size;
-
-        vector.x = targetPoint.object.position.x - 16 / 2;
-        vector.y = targetPoint.object.position.y + 16 / 2;
-
-        if (targetBox.topR !== 0) {
-            targetBox.topR.updatePosition(1,
-                Math.round(vector.x + size),
-                Math.round(vector.y + size));
-        }
-
-        if (targetBox.topL !== 0) {
-            targetBox.topL.updatePosition(1,
-                Math.round(vector.x - size),
-                Math.round(vector.y + size));
-        }
-
-        if (targetBox.bottomR !== 0) {
-            targetBox.bottomR.updatePosition(1,
-                Math.round(vector.x + size),
-                Math.round(vector.y - size));
-        }
-
-        if (targetBox.bottomL !== 0) {
-            targetBox.bottomL.updatePosition(1,
-                Math.round(vector.x - size),
-                Math.round(vector.y - size));
-        }
-    }
 }
 
 function HandleCursor() {
@@ -439,7 +377,6 @@ function MoonsUpdate(delta) {
     //Gana need to Optomize this because thats alot of shit to iterate
     if (hasRings) {
         if (ringsList !== undefined) {
-
             for (var i = 0; i < ringsList.length; i++) {
                 RingOrbit(ringsList[i], ringsList[i].Ring, new THREE.Vector3(0, 0, 0),
                     clock.getElapsedTime(), 1000, 24, delta * 42);
@@ -448,14 +385,13 @@ function MoonsUpdate(delta) {
     }
 
     if (moonList !== undefined) {
-       // orbit(sundata, dirLight,
-       //     new THREE.Vector3(0, 0, 0), clock.getElapsedTime() * 1.6,
-       //     1000, delta / 12);
+        orbit(sundata, dirLight,
+            new THREE.Vector3(0, 0, 0), clock.getElapsedTime() * 0.2,
+            1000, delta / 12);
 
         for (var i = 0; i < moonList.length; i++) {
             moonList[i].text.updatePosition(moonList[i].moonSize,
                 -   moonList[i].text.element.clientWidth / 2, 55);
-
             orbit(moonList[i], moonList[i].moonObject,
                 new THREE.Vector3(0, 0, 0), clock.getElapsedTime() * moonList[i].orbitSpeedMult,
                 1000, delta / 12);
@@ -466,25 +402,16 @@ function MoonsUpdate(delta) {
 }
 
 function ShowHideInfo() {
-    // if(planetTextInfo !== undefined)
-    // {
-    //     if (planetSelected) 
-    //         planetTextInfo.element.style.visibility = "visible";  
-    //     else                
-    //         planetTextInfo.element.style.visibility = "hidden"; 
-    // }
 }
 
 function toggleOrbts() {
 
     showMoonOrbits = !showMoonOrbits;
 
-    if(showMoonOrbits)
-    {
+    if (showMoonOrbits) {
         document.getElementById("Show").innerHTML = "Hide Orbits";
     }
-    else
-    {
+    else {
         document.getElementById("Show").innerHTML = "Show Orbits";
     }
 }
@@ -526,29 +453,12 @@ function MouseInPlanet(object, rad) {
             targetPoint.size = planetSize * 0.75;;
             targetPoint.object = object;
         }
-
-    }
-    else {
     }
 }
 
 function MouseInMoon(moon, rad, data) {
     moon.inMoon = true;
     data.selected = true;
-    //var vector = new THREE.Vector3();
-    //
-    //vector = toScreenPosition(moon, camera);
-    //
-    //if (moon == targetPoint.object) {
-    //    // console.log( moon.selected);
-    //    data.selected = true;
-    //    moon.inMoon = true;
-    //}
-    //else {
-    //    data.selected = false;
-    //    moon.inMoon = false;
-    //}
-
 
     if (circlePointCollision(mouse.x, mouse.y, new THREE.Vector2(vector.x, vector.y), rad)) {
         if (mouseDown) {
@@ -564,8 +474,6 @@ function MouseInMoon(moon, rad, data) {
                 targetPoint.object = moon;
             }
         }
-    }
-    else {
     }
 }
 
@@ -601,7 +509,6 @@ function onMouseMove(event) {
 
 function onMouseUp(evt) {
     evt.preventDefault();
-
     mouseDown = false;
 }
 
@@ -675,7 +582,6 @@ function setUpRings(colors, vertex_text, fragment_text) {
             MainScene.add(ringsList[i].Ring);
         }
     }
-
 }
 
 function CreateFlatBelt(ringData, vertex_text, fragment_text) {
@@ -732,7 +638,6 @@ function InitializeRingsData(ringsList) {
         var orbitspeed;
         var flat;
         var per;
-
         var roll = Math.round(randomRange(0, 10));
 
         if (roll >= 4)
@@ -748,8 +653,6 @@ function InitializeRingsData(ringsList) {
             orbitrangeInner = randomRange((ringsList[i - 1].a1), (ringsList[i - 1].a1) * 1.15);
             orbitrangeOutter = randomRange(orbitrangeInner * 1.05, orbitrangeInner * 1.15);
         }
-
-
         var roll = Math.round(randomRange(0, 1));
         NumAstros = randomRange(36, 52);
 
@@ -762,7 +665,6 @@ function InitializeRingsData(ringsList) {
             orbitspeed = randomRange(-5, -20);
             per = (per == 0) ? 1 : orbitspeed;
         }
-
         var mat;
 
         ringsList[i] =
@@ -791,14 +693,9 @@ function InitializeMoonData(moonList, vertex_text, fragment_text) {
 
         moonMaterial = PlanetMaterial.clone();
 
-        if (roll > 2.2) {
-            moonMaterial.uniforms.texture.value = moonData.map;
-            mat = moonMaterial;
-        }
-        else {
-            moonMaterial.uniforms.noTexture.value = 1;
-            mat = moonMaterial;
-        }
+
+        moonMaterial.uniforms.texture.value = moonData.map;
+        mat = moonMaterial;
 
         moonList[i] =
             {
@@ -867,22 +764,17 @@ function setUpSky(start, vertex_text, fragment_text) {
 
     skyboxuniforms.resolution.value.x = window.innerWidth;
     skyboxuniforms.resolution.value.y = window.innerHeight;
-
 }
 
 function createAtmos(colors, vertex_text, fragment_text) {
-
-
     if (atmo !== undefined) {
         MainScene.remove(atmo);
         doDispose(atmo);
     }
-
-
-    var col = ColorPalletes[randomRangeRound(0, ColorPalletes.length - 1)];   
+    var col = ColorPalletes[randomRangeRound(0, ColorPalletes.length - 1)];
     var colorsRGBLight = col[randomRangeRound(0, col.length - 1)].RGB;
     var colorsRGBDark = col[randomRangeRound(0, col.length - 1)].RGB;
-            
+
     atmouniforms.fresnelExp.value = randomRange(0.10, 1.99);
     atmouniforms.transitionWidth.value = randomRange(0.01, 0.05);
     atmouniforms.colorlight.value = colorsRGBLight;
@@ -950,12 +842,9 @@ function RemoveOldShizz() {
         }
     }
 
-    if(textureList.length !== 0)
-    {
-        for(var i = 0; i < textureList.length; i++)
-        {
-            if(textureList[i] !== undefined)
-            {
+    if (textureList.length !== 0) {
+        for (var i = 0; i < textureList.length; i++) {
+            if (textureList[i] !== undefined) {
                 textureList[i].dispose();
                 textureList[i] = undefined;
             }
@@ -1040,7 +929,7 @@ function createPlanet(start, vertex_text, fragment_text) {
 
     for (var i = 0; i < moonList.length; i++) {
         moonList[i].moonOrbit = DrawOrbit(moonList[i], new THREE.Vector3(0, 0, 0),
-         clock.getElapsedTime(), 1000, planetData.colors, i, moonList.length);
+            clock.getElapsedTime(), 1000, planetData.colors, i, moonList.length);
         MainScene.add(moonList[i].moonObject);
 
         if (moonList[i].moonOrbit != 0)
@@ -1069,7 +958,6 @@ function createPlanet(start, vertex_text, fragment_text) {
     planetTextInfo = generateName(planet, 1, -1000, true, planetData.colors, planetData.regionsInfo);
     planetTextInfo.setWidthbyPercent(75);
     planetTextInfo.setHeight(planetSize);
-
     // targetPoint.object = moonList[0].moonObject;
     //targetPoint.size = 0.75;
 }
@@ -1094,7 +982,6 @@ function doDispose(obj) {
     }
     obj = undefined;
 };
-
 
 function createMoon(moonSize, mat) {
     var moon = new THREE.Mesh(new THREE.IcosahedronGeometry(moonSize, 2), mat);
@@ -1143,7 +1030,6 @@ function createPlantiodData(octaves, persistance, lacunarity, seed, noiseScale, 
         planetInfo.regionsInfo);
 }
 
-
 function generateButtonUi(parent, fontsize, left, url, classname, id) {
 
     var roll = randomRange(0, 10);
@@ -1153,8 +1039,6 @@ function generateButtonUi(parent, fontsize, left, url, classname, id) {
         newUI.setHTML('<img src=' + url + '>');
     else {
         newUI.setHTML('Show Orbits');
-
-  
     }
 
     newUI.setParent(parent);
@@ -1190,9 +1074,7 @@ function generateButtonUi(parent, fontsize, left, url, classname, id) {
     return newUI;
 }
 
-
 function generateImageUi(parent, fontsize, left, url, classname, id) {
-
     var roll = randomRange(0, 10);
     var newUI = createImgLabel(fontsize, left, id, classname);
     newUI.setHTML('<img src=' + url + '>');

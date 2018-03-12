@@ -22,7 +22,7 @@ void main()
 
 	vec3 a=vec3(max((fract(dot(sin(x ),x))-.998)*1390.,.0));
 	
-	float colorLerp = normalize(sin(time));
+	float colorLerp = normalize(sin(1.0));
 
     vec4 backgroundcol = vec4(1.0, 1.0, 0.835, 1.0);
 	vec4 dayColor = vec4(0.027, 0.509, 0.929, 1.0);

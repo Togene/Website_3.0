@@ -15,13 +15,12 @@
 		<title>Audio WebGL</title>
 		<link rel="stylesheet" href="./css/style.css">
 
-		<script type="text/javascript" src="js/THREE/three.js"></script>
+		<script type="text/javascript" src="js/THREE/three.min.js"></script>
 		<script type="text/javascript" src="js/THREE/OrbitControls.js"></script>
 		<script type="text/javascript" src="js/THREE/dat.gui.min.js"></script>
 		<script type="text/javascript" src="js/THREE/FontUtils.js"></script>
-		<script type="text/javascript" src="js/helvetiker_regular.typeface.js"></script>
 		<script type="text/javascript" src="js/THREE/CanvasRenderer.js"></script>
-		<script type="text/javascript" src="js/THREE//Projector.js"></script>
+
 		<!-- <script type="text/javascript" src="js/THREE//Detector.js"></script> -->
 		<script src="js/libs/stats.min.js"></script>
 	</head>
@@ -38,13 +37,12 @@
 
 			ga('create', 'UA-104121571-1', 'auto');
 			ga('send', 'pageview');
-
 		</script>
 
 		<div id="overlay" class="overlay">
 			<div class="centre">
-					<p class="f-c-w">loading...</p>
-				<img src="./img/loadgene.gif">		</img>
+				<p class="f-c-w">loading...</p>
+				<img src="./img/loadgene.gif"> </img>
 
 			</div>
 
@@ -57,69 +55,63 @@
 					<div id='showSongs'></div>
 				</h1>
 			</div>
-			<div class="section group b-25">
+			<div class="section group h-adjust2">
 				<input type="button" onclick="" value="<<" />
 				<input type="button" onclick="" value=">>" />
 				<input id="manage" type="button" value="|>" />
-				<input id="init" onclick="$('#init').hide();" class="init-button remove" type="button" value="|>" />
+				<input id="init" onclick="$('#init').hide();" class="init-button" type="button" value="|>" />
 
 				<div class="anchor">
 					<div class='moveGUI'></div>
 				</div>
 			</div>
+
 			<div>
 				<nav class="Splash Nav">
-
-
 					<ul>
-
 						<li>
-
 							<a class="splashLink" href="http://eugenemartens.com/">
 								<img class="h-75" src="./img/home.png">
 							</a>
 						</li>
-
 						<li>
-
 							<a class="splashLink" href="./model_demo.html">
 								<img src="./img/modelviewer.gif">
 							</a>
 						</li>
 						<li>
-
 							<a class="splashLink" href="./index.html">
 								<img src="./img/PlanetGenButton.gif">
 							</a>
 						</li>
 						<li>
-
 							<a class="splashLink" href="./shader_demo.html">
 								<img src="./img/ShaderButton.gif">
 							</a>
 						</li>
 					</ul>
-
 				</nav>
 			</div>
 
 			<script id="main" type="text/javascript" src="js/Aud_main.js"></script>
 			<script>
-		
 				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 					$('#overlay').show();
-					
 					//var myVar = setInterval(hide, 5500);
 				}
-				else 
-				{
-
-					$('#overlay').hide();
+				else {
+					$('#overlay').show();
 				}
-		
+
 				function hide() {
 					$('#overlay').hide();
-				}</script>
+				}
+
+			</script>
+
+			<footer class="page-footer gold footer-body padding-10 ">
+				<h6 class="t-align-c">Created using THREE.js</h6>
+			</footer>
 	</body>
 
 </html>

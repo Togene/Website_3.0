@@ -3,9 +3,6 @@ var container, stats, controls, lineUI, gui;
 var camera, scene, Backgroundscene, renderer, clock;
 var lightpos, dirLight, angle;
 
-var depthMaterial, composer, depthRenderTarget;
-var ssaoPass;
-
 // Custom global variables
 var mouse = { x: 0, y: 0 };
 
@@ -124,7 +121,7 @@ function init() {
     plane.receiveShadow = true;
     scene.add(plane);
 
-    initPostProcessing();
+    //initPostProcessing();
     //
     // // Init gui
     // var gui = new dat.GUI();
@@ -135,6 +132,7 @@ function init() {
     //
     // gui.add(controls, "xPos");
     // gui.add(controls, "yPos");
+    
     // gui.add(controls, "zPos");
     setSize();
 }
@@ -305,13 +303,13 @@ function onWindowResize() {
     renderer.setPixelRatio(window.devicePixelRatio);
 
     // Resize renderTargets
-    ssaoPass.uniforms['size'].value.set(SCREEN_WIDTH, SCREEN_HEIGHT);
+    //ssaoPass.uniforms['size'].value.set(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     var pixelRatio = renderer.getPixelRatio();
     var newWidth = Math.floor(SCREEN_WIDTH / pixelRatio) || 1;
     var newHeight = Math.floor(SCREEN_HEIGHT / pixelRatio) || 1;
-    depthRenderTarget.setSize(newWidth, newHeight);
-    composer.setSize(newWidth, newHeight);
+    //depthRenderTarget.setSize(newWidth, newHeight);
+    //composer.setSize(newWidth, newHeight);
 }
 
 function setSize() {
@@ -327,13 +325,13 @@ function setSize() {
         renderer.setPixelRatio(window.devicePixelRatio);
 
         // Resize renderTargets
-        ssaoPass.uniforms['size'].value.set(SCREEN_WIDTH, SCREEN_HEIGHT);
+        //ssaoPass.uniforms['size'].value.set(SCREEN_WIDTH, SCREEN_HEIGHT);
 
         var pixelRatio = renderer.getPixelRatio();
         var newWidth = Math.floor(SCREEN_WIDTH / pixelRatio) || 1;
         var newHeight = Math.floor(SCREEN_HEIGHT / pixelRatio) || 1;
-        depthRenderTarget.setSize(newWidth, newHeight);
-        composer.setSize(newWidth, newHeight);
+       // depthRenderTarget.setSize(newWidth, newHeight);
+        //composer.setSize(newWidth, newHeight);
     }, false);
 }
 
@@ -383,19 +381,19 @@ function input() {
 }
 
 function render() {
-
-    if (postprocessing.enabled) {
-
-        //Render depth into depthRenderTarget
-        scene.overrideMaterial = depthMaterial;
-        renderer.render(scene, camera, depthRenderTarget, true);
-
-        //Render renderPass and SSAO shaderPass
-        scene.overrideMaterial = null;
-        composer.render();
-    }
-    else
-        renderer.render(scene, camera)
+   renderer.render(scene, camera)
+   // if (postprocessing.enabled) {
+//
+   //     //Render depth into depthRenderTarget
+   //     scene.overrideMaterial = depthMaterial;
+   //     renderer.render(scene, camera, depthRenderTarget, true);
+//
+   //     //Render renderPass and SSAO shaderPass
+   //     scene.overrideMaterial = null;
+   //     composer.render();
+   // }
+   // else
+     
 }
 
 // Follows the mouse event
