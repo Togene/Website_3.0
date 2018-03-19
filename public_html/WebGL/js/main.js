@@ -202,9 +202,6 @@ function init() {
     var StarsRenderPass = new THREE.RenderPass(BackgroundScene, camera);
     composer.addPass(StarsRenderPass);
 
-    var bloomPass = new THREE.BloomPass(0.4, 25, 5, 128);
-    composer.addPass(bloomPass)
-
     var effectCopy = new THREE.ShaderPass(THREE.CopyShader);
     composer.addPass(effectCopy);
     effectCopy.renderToScreen = true;
@@ -296,7 +293,7 @@ function onWindowResize() {
     else {
         console.log("OnPc");
         renderer.setPixelRatio(window.devicePixelRatio);
-        composer.setSize(window.innerWidth, window.innerHeight);
+        composer.setSize(window.innerWidth / resolution, window.innerHeight / resolution);
         renderer.setSize(Math.round(window.innerWidth / resolution), Math.round(window.innerHeight / resolution));
         renderer.domElement.style.width = Math.round(renderer.domElement.width * resolution) + 'px';
         renderer.domElement.style.height = Math.round(renderer.domElement.height * resolution) + 'px';
