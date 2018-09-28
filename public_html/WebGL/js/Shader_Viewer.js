@@ -554,17 +554,29 @@ document.addEventListener("keydown", onDocumentKeyDown, false);
 function onDocumentKeyDown(event) {
     var keyCode = event.which;
     if (keyCode == 87) {
+        console.log("Poo");
         index++;
     } else if (keyCode == 83) {
+        console.log("Poo");
         index--;
     } else if (keyCode == 65) {
+        console.log("Poo");
         index++;
     } else if (keyCode == 68) {
+        console.log("Poo");
         index--;
     } else if (keyCode == 32) {
 
     }
 };
+
+function increment(){
+    index++;
+}
+
+function decriment(){
+    index--;
+}
 
 function loadModel(path, objectUrlName, objectmatUrlName) {
 
